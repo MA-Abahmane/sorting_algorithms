@@ -11,35 +11,33 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-unsigned long int i;
+unsigned long int h, i;
 int val;
-
-i = 0;
-while (i < size)
-{   
-    /* if the 'current value' > 'next value'; switch values */
-   if (array[i] > array[i + 1])
-    {
-        val = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = val;
-    }
-    print_array(array, size);
-    ++i;
-}
-
-}
+int flag = 0;
 
 
-int main(void)
+h = 0;
+while (h < size)
 {
-    int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-    size_t n = sizeof(array) / sizeof(array[0]);
+    i = 0;
+    while (i < size - h - 1)
+    {
+        /* if the 'current value' > 'next value'; switch values */
+        if (array[i] > array[i + 1])
+        {
+            val = array[i];
+            array[i] = array[i + 1];
+            array[i + 1] = val;
+            flag = 1;
+        }
+        print_array(array, size);
+        ++i;
+    }
 
-    print_array(array, n);
-    printf("\n");
-    bubble_sort(array, n);
-    printf("\n");
-    print_array(array, n);
-    return (0);
+    if (flag == 0)
+        break;
+
+    h++;
+}
+
 }
