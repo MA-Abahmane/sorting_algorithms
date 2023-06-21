@@ -6,7 +6,7 @@
  *     ascending order using the Bubble sort algorithm.
  * @array: given intiger array to sort
  * @size: the size of the array
- * 
+ *
  * Return: None
  */
 void bubble_sort(int *array, size_t size)
