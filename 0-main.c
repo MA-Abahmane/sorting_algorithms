@@ -1,8 +1,7 @@
+#include "0-bubble_sort.c"
 #include <stdio.h>
 #include <stdlib.h>
-#include "0-bubble_sort.c"
 #include "sort.h"
-
 
 /**
  * main - Entry point

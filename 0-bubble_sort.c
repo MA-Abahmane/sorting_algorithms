@@ -12,17 +12,18 @@
 void bubble_sort(int *array, size_t size)
 {
 unsigned long int h, i;
-int val;
 int flag = 0;
+int val;
 
 
 h = 0;
 while (h < size)
 {
     i = 0;
-    while (i < size - h - 1)
+    while (i < size - 1)
     {
         /* if the 'current value' > 'next value'; switch values */
+        /* print the updated list and raise a flag */
         if (array[i] > array[i + 1])
         {
             val = array[i];
@@ -33,7 +34,7 @@ while (h < size)
         }
         ++i;
     }
-
+    /* if no flags raised (list is sorted); return */
     if (flag == 0)
         break;
 
