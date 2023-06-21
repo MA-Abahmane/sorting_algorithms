@@ -28,9 +28,9 @@ while (h < size)
             val = array[i];
             array[i] = array[i + 1];
             array[i + 1] = val;
+            print_array(array, size);
             flag = 1;
         }
-        print_array(array, size);
         ++i;
     }
 
