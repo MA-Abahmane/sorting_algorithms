@@ -2,10 +2,10 @@
 
 
 /**
- * swp - a function used to swap the values on 2 array positions
- * @array: given intiger array to sort
- * @idx1: the size of the array
- * @idx2: first value in array partition (0)
+ * swp - a function used to swap the values of two array positions
+ * @array: given intiger array
+ * @idx1: first array positions
+ * @idx2: second array positions
  *
  * Return: None
  */
