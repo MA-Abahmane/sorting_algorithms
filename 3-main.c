@@ -1,3 +1,4 @@
+#include "3-quick_sort.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
