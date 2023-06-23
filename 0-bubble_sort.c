@@ -19,26 +19,28 @@ int val;
 h = 0;
 while (h < size)
 {
-    i = 0;
-    while (i < size - 1)
-    {
-        /* if the 'current value' > 'next value'; switch values */
-        /* print the updated list and raise a flag */
-        if (array[i] > array[i + 1])
-        {
-            val = array[i];
-            array[i] = array[i + 1];
-            array[i + 1] = val;
-            print_array(array, size);
-            flag = 1;
-        }
-        ++i;
-    }
-    /* if no flags raised (list is sorted); return */
-    if (flag == 0)
-        break;
 
-    h++;
+i = 0;
+while (i < size - 1)
+{
+/* if the 'current value' > 'next value'; switch values */
+/* print the updated list and raise a flag */
+if (array[i] > array[i + 1])
+{
+val = array[i];
+array[i] = array[i + 1];
+array[i + 1] = val;
+print_array(array, size);
+flag = 1;
+}
+++i;
+}
+
+/* if no flags raised (list is sorted); return */
+if (flag == 0)
+break;
+
+h++;
 }
 
 }
