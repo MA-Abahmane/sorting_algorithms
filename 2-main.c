@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "2-selection_sort.c"
 #include <stdlib.h>
 #include "sort.h"
 
