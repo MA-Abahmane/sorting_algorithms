@@ -33,13 +33,13 @@ size_t gap, i, ndx;
 
 /* if array in unsortable; return */
 if (array == NULL || size < 2)
-    return;
+return;
 
 /* define the size of the gap (Knuth sequence) */
 gap = 1;
 while (gap < size / 3)
 {
-    gap = gap * 3 + 1;
+gap = gap * 3 + 1;
 }
 
 ndx = 0;
@@ -47,17 +47,20 @@ ndx = 0;
 /* as we go the gap gets smaller */
 for (; gap >= 1; gap /= 3)
 {
-    /* compare the number before gap and after, in there are */
-    /* not in place, swap the values */
-    for (i = gap; i < size; i++)
-    {
-        for (ndx = i; ndx >= gap && (array[ndx] < array[ndx - gap]); ndx -= gap)
-        {
-            swp(array, ndx, (ndx - gap));
-        }
-    }
-    print_array(array, size);
+
+/* compare the number before gap and after, in there are */
+/* not in place, swap the values */
+for (i = gap; i < size; i++)
+{
+
+for (ndx = i; ndx >= gap && (array[ndx] < array[ndx - gap]); ndx -= gap)
+{
+swp(array, ndx, (ndx - gap));
 }
 
 }
+print_array(array, size);
 
+}
+
+}

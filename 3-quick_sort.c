@@ -43,29 +43,29 @@ i = low;
 while (i < hight)
 {
 
-    /* if an element smaller than pivot found; */
-    /* swap it with the greater element pointer 'i' */
-    if (array[i] < pvt)
-    {
+/* if an element smaller than pivot found; */
+/* swap it with the greater element pointer 'i' */
+if (array[i] < pvt)
+{
 
-        if (array[crnt] != array[i])
-        {
-            /* swap elements/print */
-            swp(array, crnt, i);
-            print_array(array, size);
-        }
-        /* move to next element in array */
-        crnt++;
-    }
+if (array[crnt] != array[i])
+{
+/* swap elements/print */
+swp(array, crnt, i);
+print_array(array, size);
+}
+/* move to next element in array */
+crnt++;
+}
 
-    ++i;
+++i;
 }
 
 if (array[crnt] != array[hight])
 {
-    /* swap elements/print */
-    swp(array, crnt, hight);
-    print_array(array, size);
+/* swap elements/print */
+swp(array, crnt, hight);
+print_array(array, size);
 }
 
 /* return the cerrent index position */
@@ -86,20 +86,20 @@ return (crnt);
  */
 void quickSort(int *array, ssize_t low, ssize_t hight, size_t size)
 {
-    ssize_t point = 0;
+ssize_t point = 0;
 
-    if (low < hight)
-    {
-        /* get the pivot element */
-        /* element smaller than pivot go on left of pivot */
-        /* element bigger than pivot go on right of pivot */
-        point = partition(array, low, hight, size);
+if (low < hight)
+{
+/* get the pivot element */
+/* element smaller than pivot go on left of pivot */
+/* element bigger than pivot go on right of pivot */
+point = partition(array, low, hight, size);
 
-        /* recursive call on the left of pivot */
-        quickSort(array, low, point - 1, size);
-        /* recursive call on the right of pivot */
-        quickSort(array, point + 1, hight, size);
-    }
+/* recursive call on the left of pivot */
+quickSort(array, low, point - 1, size);
+/* recursive call on the right of pivot */
+quickSort(array, point + 1, hight, size);
+}
 }
 
 
@@ -114,9 +114,9 @@ void quickSort(int *array, ssize_t low, ssize_t hight, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-    /* if array in unsortable; return */
-    if (array == NULL || size < 2)
-        return;
+/* if array in unsortable; return */
+if (array == NULL || size < 2)
+return;
 
-    quickSort(array, 0, size - 1, size);
+quickSort(array, 0, size - 1, size);
 }

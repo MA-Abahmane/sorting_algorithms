@@ -9,6 +9,7 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *copy;
+
 	if (!(*list) || !(*list)->next)
 		return;
 	copy = (*list);
