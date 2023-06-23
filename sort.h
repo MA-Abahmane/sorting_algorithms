@@ -25,8 +25,6 @@ struct listint_s *next;
 
 
 /* Data type printers (tool) */
-#include "print_array.c"
-#include "print_list.c"
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
