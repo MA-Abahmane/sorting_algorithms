@@ -35,7 +35,7 @@ void bubble_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
-void swap_values(listint_t *first, listint_t *second);
+void cocktail_sort_list(listint_t **list);
 
 /* Advanced: */
 void shell_sort(int *array, size_t size);
