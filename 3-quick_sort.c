@@ -31,7 +31,7 @@ array[idx2] = val;
  */
 int partition(int *array, ssize_t low, ssize_t hight, size_t size)
 {
-int val, pvt;
+int pvt;
 ssize_t i, crnt = low;
 
 /* select the pivot */

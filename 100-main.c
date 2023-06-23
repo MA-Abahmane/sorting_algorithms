@@ -1,4 +1,3 @@
-#include "100-shell_sort.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
