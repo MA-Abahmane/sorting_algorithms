@@ -39,10 +39,10 @@ int max, j;
 size_t i;
 int *count = NULL, *output = NULL;
 
-max = get_max(array, size);
 if (array == NULL || size < 2)
 return;
 
+max = get_max(array, size);
 count = malloc((max + 1) * sizeof(int));
 if (count == NULL)
 return;
