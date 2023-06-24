@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "c programing": "c",
+        "sort.h": "c",
+        "random": "c",
+        "limits": "c",
+        "algorithm": "c",
+        "stdlib.h": "c"
+    }
+}
