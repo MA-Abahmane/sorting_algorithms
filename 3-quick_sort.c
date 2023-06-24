@@ -32,44 +32,52 @@ array[idx2] = val;
 int partition(int *array, ssize_t low, ssize_t hight, size_t size)
 {
 int pvt;
-ssize_t i, crnt = low;
+ssize_t i, index;
 
-/* select the pivot */
+/* select the pivot (last element) */
 pvt = array[hight];
 
-/* while iterating thougt the array compare pivot  'pvt'*/
-/* with each element 'array[i]' */
+/* index in partition (set as first element) */
+index = low;
+
+/* while iterating thougt the array compare pivot with each */
+/* other element in the partition */
+/* if an element < pivot; switch it with 'index' and */ 
+/* increment 'index' by 1 */
 i = low;
 while (i < hight)
 {
 
 /* if an element smaller than pivot found; */
-/* swap it with the greater element pointer 'i' */
+/* swap it with 'index' that is on the left of pivot */
 if (array[i] < pvt)
 {
 
-if (array[crnt] != array[i])
+if (array[index] != array[i])
 {
 /* swap elements/print */
-swp(array, crnt, i);
+swp(array, index, i);
 print_array(array, size);
 }
-/* move to next element in array */
-crnt++;
+/* move to 'index' to the next in array */
+index++;
 }
 
 ++i;
 }
 
-if (array[crnt] != array[hight])
+/* now we set pivot where index is */
+/* now we have: */
+/* [ smaller elements < pivot < bigger elements ] */
+if (array[index] != array[hight])
 {
 /* swap elements/print */
-swp(array, crnt, hight);
+swp(array, index, hight);
 print_array(array, size);
 }
 
-/* return the cerrent index position */
-return (crnt);
+/* return the current 'index' position */
+return (index);
 }
 
 
@@ -86,19 +94,22 @@ return (crnt);
  */
 void quickSort(int *array, ssize_t low, ssize_t hight, size_t size)
 {
-ssize_t point = 0;
+ssize_t Pindex = 0;
 
+/* is end of partition is reached */
 if (low < hight)
 {
-/* get the pivot element */
+/* get the pivot element and sort array/partition */
 /* element smaller than pivot go on left of pivot */
 /* element bigger than pivot go on right of pivot */
-point = partition(array, low, hight, size);
+/* return pivot index */
+Pindex = partition(array, low, hight, size);
 
-/* recursive call on the left of pivot */
-quickSort(array, low, point - 1, size);
-/* recursive call on the right of pivot */
-quickSort(array, point + 1, hight, size);
+/* Now Devide And Conquer!! */
+/* recursive call on the left of pivot [left partition] */
+quickSort(array, low, Pindex - 1, size);
+/* recursive call on the right of pivot [right partition] */
+quickSort(array, Pindex + 1, hight, size);
 }
 }
 
