@@ -54,7 +54,7 @@ free(count);
 return;
 }
 /* compare each element of the array with all indexes of 'count' */
-for (i = 0; i < size; i++) 
+for (i = 0; i < size; i++)
 for (j = 0; j < max + 1; j++)
 if (j == array[i])  /* if a match is found, incriment that index by 1 */
 count[j]++;
@@ -65,7 +65,7 @@ count[j] += count[j - 1];
 
 print_array(count, max + 1);
 /* set each element in its place */
-for (i = 0; i < size; i++) 
+for (i = 0; i < size; i++)
 {
 output[count[array[i]] -  1] = array[i];
 count[array[i]] -= 1;
