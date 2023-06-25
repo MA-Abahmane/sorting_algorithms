@@ -5,6 +5,9 @@
         "random": "c",
         "limits": "c",
         "algorithm": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "*.tcc": "c",
+        "string": "c",
+        "string_view": "c"
     }
 }
