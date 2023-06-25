@@ -1,5 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a DLL of integers in
@@ -13,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *copy, *temp;
 
-	if (!(*list) || !(*list)->next)
+	if (!*list || !list) 
 		return;
 
 	copy = *list;
