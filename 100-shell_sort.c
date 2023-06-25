@@ -43,7 +43,6 @@ gap = gap * 3 + 1;
 }
 
 ndx = 0;
-
 /* as we go the gap gets smaller */
 for (; gap >= 1; gap /= 3)
 {
