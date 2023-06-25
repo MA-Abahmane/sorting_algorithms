@@ -10,36 +10,37 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *index, *prv, *crnt;
+	listint_t *copy, *temp;
 
-	if (!(*list) || !list)
+	if (!(*list) || !(*list)->next || !list)
 		return;
 
+	copy = *list;
 
-	index = *list;
-	while ((index = index->next))
-	{	
-		crnt = index;
-		while (crnt->prev && crnt->n < crnt->prev->n)
+	while (copy)
+	{
+		while (copy->next && copy->n > copy->next->n)
 		{
-			prv = crnt->prev;
-			
+			temp = copy->next;
+			copy->next = temp->next;
+			temp->prev = copy->prev;
 
-			if (crnt->next)
-				crnt->next->prev = prv;
+			if (copy->prev)
+				copy->prev->next = temp;
 
-			if (prv->prev)
-				prv->prev->next = crnt;
+			if (temp->next)
+				temp->next->prev = copy;
+
+			copy->prev = temp;
+			temp->next = copy;
+
+			if (temp->prev)
+				copy = temp->prev;
 			else
-				*list = crnt;
-
-			prv->next = crnt->next;
-			crnt->prev = prv->prev;
-
-			crnt->next = prv;
-			prv->prev = crnt;
+				*list = temp;
 
 			print_list(*list);
 		}
+		copy = copy->next;
 	}
 }
