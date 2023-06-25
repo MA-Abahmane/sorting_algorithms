@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *copy, *temp;
 
-	if (!(*list) || !list)
+	if (!(*list) || !(*list)->next || !list)
 		return;
 
 	copy = *list;
