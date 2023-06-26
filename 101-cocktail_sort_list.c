@@ -13,7 +13,7 @@ void backward_swap(listint_t **list, listint_t **tail, listint_t **current);
 void cocktail_sort_list(listint_t **list)
 {
 	listint_t *copy, *tail;
-	int sorted = 0;
+	int FLAG = 0;
 
 	if (!(*list) || !(*list)->next)
 		return;
@@ -22,16 +22,16 @@ void cocktail_sort_list(listint_t **list)
 	while (tail->next)
 		tail = tail->next;
 
-	while (!sorted)
+	while (!FLAG)
 	{
-		sorted = 1;
+		FLAG = 1;
 		for (copy = *list; copy != tail; copy = copy->next)
 		{
 			if (copy->n > copy->next->n)
 			{
 				forward_swap(list, &tail, &copy);
-				print_list((const listint_t *)*list);
-				sorted = 0;
+				print_list(*list);
+				FLAG = 0;
 			}
 		}
 		for (copy = copy->prev; copy != *list; copy = copy->prev)
@@ -39,8 +39,8 @@ void cocktail_sort_list(listint_t **list)
 			if (copy->n < copy->prev->n)
 			{
 				backward_swap(list, &tail, &copy);
-				print_list((const listint_t *)*list);
-				sorted = 0;
+				print_list(*list);
+				FLAG = 0;
 			}
 		}
 	}
@@ -81,7 +81,6 @@ void forward_swap(listint_t **list, listint_t **tail, listint_t **current)
 */
 void backward_swap(listint_t **list, listint_t **tail, listint_t **current)
 {
-
 	listint_t *temp = (*current)->prev;
 
 	if ((*current)->next)
