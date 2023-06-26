@@ -42,13 +42,12 @@ pvt = array[hight];
 
 while (7)
 {
-do
-{
+
+do {
 i++;
 } while (array[i] < pvt);
 
-do
-{
+do {
 j--;
 } while (array[j] > pvt);
 
