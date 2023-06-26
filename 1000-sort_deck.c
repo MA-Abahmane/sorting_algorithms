@@ -14,5 +14,4 @@ void sort_deck(deck_node_t **deck)
 if (!(*deck) || !(*deck)->next || !deck)
 return;
 
-
 }
