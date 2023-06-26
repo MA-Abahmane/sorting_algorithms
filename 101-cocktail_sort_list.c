@@ -15,7 +15,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *copy, *tail;
 	int FLAG = 0;
 
-	if (!(*list) || !(*list)->next)
+	if (!list || !(*list)->next)
 		return;
 
 	tail = *list;
