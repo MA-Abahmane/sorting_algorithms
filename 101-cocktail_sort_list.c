@@ -15,10 +15,11 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *copy, *tail;
 	int sorted = 0;
 
-	if (!(*list))
+	if (!(*list) || !(*list)->next)
 		return;
 
-	for (tail = *list; tail->next != NULL;)
+	tail = *list;
+	while (tail->next)
 		tail = tail->next;
 
 	while (!sorted)
