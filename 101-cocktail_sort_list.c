@@ -15,7 +15,7 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *copy, *tail;
 	int sorted = 0;
 
-	if (!(*list) || !(*list)->next)
+	if (list || !(*list) || !(*list)->next)
 		return;
 
 	for (tail = *list; tail->next != NULL;)
@@ -33,8 +33,7 @@ void cocktail_sort_list(listint_t **list)
 				sorted = 0;
 			}
 		}
-		for (copy = copy->prev; copy != *list;
-			 copy = copy->prev)
+		for (copy = copy->prev; copy != *list; copy = copy->prev)
 		{
 			if (copy->n < copy->prev->n)
 			{
