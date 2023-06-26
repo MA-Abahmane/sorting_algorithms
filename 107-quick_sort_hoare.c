@@ -31,7 +31,7 @@ array[idx2] = val;
  */
 int partition(int *array, ssize_t low, ssize_t hight, size_t size)
 {
-int pvt, flag;
+int pvt;
 int i = low - 1;
 int j = hight + 1;
 
@@ -77,7 +77,7 @@ print_array(array, size);
  */
 void quickSort(int *array, ssize_t low, ssize_t hight, size_t size)
 {
-int i, Pindex, flag;
+int Pindex;
 
 /* is end of partition is reached */
 if (low < hight)
