@@ -25,7 +25,8 @@ void cocktail_sort_list(listint_t **list)
 	while (!FLAG)
 	{
 		FLAG = 1;
-		for (copy = *list; copy != tail; copy = copy->next)
+		copy = *list;
+		while (copy != tail)
 		{
 			if (copy->n > copy->next->n)
 			{
@@ -33,8 +34,10 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list);
 				FLAG = 0;
 			}
+			copy = copy->next;
 		}
-		for (copy = copy->prev; copy != *list; copy = copy->prev)
+		copy = copy->prev;
+		while (copy != *list)
 		{
 			if (copy->n < copy->prev->n)
 			{
@@ -42,6 +45,7 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list);
 				FLAG = 0;
 			}
+			copy = copy->prev;
 		}
 	}
 }
