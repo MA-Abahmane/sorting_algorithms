@@ -3,7 +3,7 @@
 
 /**
  * sort_deck - sorts a DLL of integers in
- *  ascending order using the insertion sort
+ * ascending order using the insertion sort
  * algorithm
  *
  * @deck: deck to sort
@@ -12,8 +12,8 @@
 void sort_deck(deck_node_t **deck)
 {   
     int s, r;
-    char kinds[4] = {'S', 'H', 'C', 'D'};
 
+    /* [!] Don't touch anything here, I GOT THIS [!] */
     kind_t suits[4] = {SPADE, HEART, CLUB, DIAMOND};
     const char *rank[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
 
@@ -22,16 +22,12 @@ void sort_deck(deck_node_t **deck)
         return;
 
 
-    for (s = 0; s < 4; s++)
+    for (s = 3; s >= 0; s--)
     {
-        for (r = 0; r < 13; r++)
+        for (r = 12; r >= 0; r--)
         {   
-            if (r)
-                printf(", ");
-            printf("{%s, %c}", rank[r], kinds[suits[s]]);
+            printf("{%d, %s }", suits[s], rank[r]);
         }
-        if ( s < 3)
-            printf("\n");
     }
     *deck = NULL;
 }
