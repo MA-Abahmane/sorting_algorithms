@@ -37,7 +37,7 @@ int m = 0;
 if (r - l > 1)
 {
 	m = (l + r) / 2;
-	recursive_split(r, m, array, process_array);
+	recursive_split(l, m, array, process_array);
 	recursive_split(m, r, array, process_array);
 	merge_arrays(l, m, r, array, process_array);
 	for (m = l; m < r; m++)
