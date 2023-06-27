@@ -3,7 +3,7 @@
 
 /**
  * sort_deck - sorts a DLL of integers in
- * ascending order using the insertion sort
+ *  ascending order using the insertion sort
  * algorithm
  *
  * @deck: deck to sort
