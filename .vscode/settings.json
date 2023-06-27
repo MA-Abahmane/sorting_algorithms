@@ -11,6 +11,12 @@
         "string_view": "c",
         "array": "c",
         "deque": "c",
-        "vector": "c"
-    }
+        "vector": "c",
+        "system_error": "c",
+        "functional": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
